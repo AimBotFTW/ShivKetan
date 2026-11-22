@@ -1,18 +1,21 @@
 # Project status
 
-Last updated: 2026-11-05. Repository root: `<project-root>`.
+Last updated: 2026-11-22. Repository root: `<project-root>`.
 
-## Seven-step handoff
+## Production-readiness pass
 
-| Step | Status | Evidence / next action |
+| Area | Status | Evidence / remaining work |
 |---|---|---|
-| 1. Inspect | Complete | Project-local `.git` was absent. The prior Git root from the project was `$HOME`; this project now has its own repository. Project root verification is recorded in the final handoff. |
-| 2. `.gitignore` | Complete | Project-specific ignore file added. Clean PNGs and website/audio source are not ignored. Backup files and local mask review artifacts are excluded. |
-| 3. Tooling | Deferred by current strict scope | Original prompt requested `tools/`, copied scripts and `check_assets.py`; the continuation allowed only Git metadata, `.gitignore` and requested documentation. No scripts/helper created or copied; `check_assets.py` was not run. |
-| 4. Documentation | Complete | README and requested architecture, content, changelog, known issues, image, AI-agent, contribution, context and status docs added. |
-| 5. Git commits | Not done by instruction | No application files staged; no commits created. |
-| 6. Push | Not configured in this handoff | The intended workflow is private GitHub collaboration with the owner's brother; no remote or push exists yet. This status is not a prohibition or licensing gate for private collaboration. |
-| 7. Verification | Partial | Local repo root/status and asset counts checked. Original clone test and helper comparison are impossible because there is no commit/remote and helper was deferred. No app files were changed in this task. |
+| Static build | Implemented | `scripts/build_site.py` generates `dist/`, normalizes query-bearing asset filenames, and writes `/` and `/demos/city-2/`. |
+| Asset checks | Implemented | `scripts/check_site.py` checks both routes, local Framer references, module imports, query-free output names, and localhost references. |
+| Wedding content | Updated | Haldi, Sakharpuda, wedding date/time and full venue address match supplied details. Unconfirmed March events are hidden; weather/staff copy is removed. |
+| Outbound destinations | Pending confirmation | Map, WhatsApp and Instagram CTAs are hidden until their destinations are confirmed. |
+| Browser review | Partial | Isolated browser confirmed hydration, content, countdown, music activation on click, and gallery rendering. Console/network logs and requested viewport matrix remain untested. |
+| Deployment | Pending | Vercel project `shivketan` has SSO protection enabled. Create a preview deployment from the feature branch; do not promote to production. |
+| Repository visibility | Finding | GitHub reports `AimBotFTW/ShivKetan` as public, despite older docs describing it as private. |
+| Licensing | Unresolved | Missing Piece template terms remain unresolved. |
+
+The repository is on `fix/production-readiness`; changes are left reviewable on that feature branch. No changes were made to original assets or backups.
 
 ## Verified asset inventory
 
@@ -30,5 +33,5 @@ Last updated: 2026-11-05. Repository root: `<project-root>`.
 1. The intended workflow is local development and commits, then private GitHub collaboration with the owner's brother. Public distribution and public hosting are not currently intended.
 2. The owner confirmed permission to include and share `sajiri-gojiri.mp3` for the intended project arrangement; this does not establish unrestricted public redistribution rights.
 3. The Missing Piece template terms include restrictions on redistribution/sharing, third-party use and watermark alteration. See [IMAGES.md](IMAGES.md#licensing-and-sharing) for the concise factual note; do not infer broader rights from private collaboration.
-4. The local repository currently has no commits, remote, or checked-in source files; site files remain untracked. These are current repository-state facts, not a prohibition on the intended private collaboration.
-5. The current code still contains stale event and destination details listed in `KNOWN_ISSUES_AND_TODO.md`.
+4. GitHub currently reports the supplied repository as public. The project Vercel settings show SSO protection enabled for deployments.
+5. The active page hides unconfirmed outbound destinations and unconfirmed event cards; see `KNOWN_ISSUES_AND_TODO.md`.

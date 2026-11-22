@@ -15,6 +15,9 @@ The template's generated layer structure is hydrated after initial HTML renderin
 | `download/www.missingpieceinvites.com/demos/city-2-local.html` | Active personalized local page. |
 | `download/framerusercontent.com/sites/3bR6R2YrHoycodLqL6z8ep/rnnTUOxVq8PHuNJnW02Z-QNi-QQMH82osuPTQxAKcn0.q7vHoL6S.mjs` | Page-specific content and component props. |
 | `download/serve.py` | Local Python server. |
+| `scripts/build_site.py` | Reproducible static build into `dist/`, with query-free asset filenames. |
+| `scripts/check_site.py` | Checks built routes, local Framer references, and localhost URLs. |
+| `vercel.json` | Static build output, route redirect, and asset cache headers. |
 | `download/www.missingpieceinvites.com/demos/city-2-original.html` | Reference snapshot with remote Framer dependencies. Whether it is pristine is unverified. |
 | `download/www.missingpieceinvites.com/demos/city-2.html` | Obsolete older page, not selected by the active route. It remains in the repository as a candidate for exclusion from the eventual Git repository; it has not been removed. |
 
@@ -22,9 +25,11 @@ The canonical local alias is `/demos/city-2`; the direct file route is `/www.mis
 
 ## Runtime and dependencies
 
-The active page has 20 local MJS modules, including React/Framer runtime, motion, smooth scrolling, slideshow and other generated modules. There are four MJS backup files in the module directory; they are not runtime modules. No `package.json` or install/build workflow was found in the download tree. Local serving uses Python's standard library. The active HTML/MJS still reference remote Framer/CDN assets and Google-hosted fonts. Browser hydration and network behavior are unverified; the locally served site still depends on remote resources and has not been browser-tested.
+The active page has 20 local MJS modules, including React/Framer runtime, motion, smooth scrolling, slideshow and other generated modules. Four MJS backups in the module directory are excluded from the built output. The static build uses Python 3 standard-library modules; local development can still use `download/serve.py`. Google-hosted fonts remain external dependencies in the export. The generated site has been opened in an isolated browser and its hero, confirmed event content, music gesture, countdown, and gallery were inspected. Console/network diagnostics and responsive viewport sizing still need a browser with DevTools support.
 
-The active HTML also references a missing local Apple touch icon (`crQk5UzfRd9W9n54FdrUY2WUTU.png`) and missing Open Graph/Twitter image (`7LPUQldg1w5B1Zrz0pCfh0AeQw.png`). The custom page MJS contains a missing remote WtUt asset as the `Hashtag` component's default icon. The active HTML does not reference WtUt directly; whether hydration requests that default is unverified.
+The broken Apple-touch and Open Graph/Twitter image references have been removed or replaced with captured local imagery. The missing WtUt image remains only as a default in the Hashtag component and is not used by the active instance.
+
+The build preserves captured modules, fonts, images, and audio, rewrites query-bearing asset paths to deterministic query-free filenames, and emits root and `/demos/city-2/` routes. Vercel serves the generated files directly; it does not run the Python development server. Deployment protection is enabled through Vercel SSO.
 
 ## Backups
 

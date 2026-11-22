@@ -17,6 +17,7 @@ wm-env/
 lama-env/
 
 # Build/developer output
+dist/
 node_modules/
 *.log
 

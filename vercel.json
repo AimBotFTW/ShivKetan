@@ -1,0 +1,26 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "python3 scripts/build_site.py",
+  "outputDirectory": "dist",
+  "redirects": [
+    { "source": "/demos/city-2", "destination": "/demos/city-2/", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/framerusercontent.com/(.*)\\.(mjs|woff2|mp3|png|jpe?g|svg)$",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/(.*)\\.html$",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
+    },
+    {
+      "source": "/",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
+    },
+    {
+      "source": "/demos/city-2/",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
+    }
+  ]
+}
