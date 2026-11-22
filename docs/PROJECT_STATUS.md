@@ -11,11 +11,11 @@ Last updated: 2026-11-22. Repository root: `<project-root>`.
 | Wedding content | Updated | Haldi, Sakharpuda, wedding date/time and full venue address match supplied details. Unconfirmed March events are hidden; weather/staff copy is removed. |
 | Outbound destinations | Pending confirmation | Map, WhatsApp and Instagram CTAs are hidden until their destinations are confirmed. |
 | Browser review | Partial | Isolated browser confirmed hydration, content, countdown, music activation on click, and gallery rendering. Console/network logs and requested viewport matrix remain untested. |
-| Deployment | Pending | Vercel project `shivketan` has SSO protection enabled. Create a preview deployment from the feature branch; do not promote to production. |
+| Deployment | READY | Preview created from `fix/production-readiness`; an anonymous HTTP request redirects to Vercel SSO. No production promotion was made. |
 | Repository visibility | Finding | GitHub reports `AimBotFTW/ShivKetan` as public, despite older docs describing it as private. |
 | Licensing | Unresolved | Missing Piece template terms remain unresolved. |
 
-The repository is on `fix/production-readiness`; changes are left reviewable on that feature branch. No changes were made to original assets or backups.
+The repository is on `fix/production-readiness`; changes are reviewable on that feature branch. No changes were made to original assets or backups.
 
 ## Verified asset inventory
 

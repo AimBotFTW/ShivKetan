@@ -35,5 +35,5 @@
 - Static build and generated-path checks added; routes emitted for `/` and `/demos/city-2/`. The generated site passed checks for localhost references, missing Framer assets, and local MJS imports.
 - Haldi corrected, unconfirmed March cards hidden, weather/staff copy removed, and stale vendor analytics snippets removed. Map, Instagram, and WhatsApp destinations remain pending confirmation.
 - In an isolated browser, confirmed page hydration, event card text, countdown, music start after gesture, and gallery rendering. Console/network logs and 375/393/768/1280/1440 viewport checks remain outstanding because the available browser surface does not expose those diagnostics or viewport controls.
-- GitHub currently reports `AimBotFTW/ShivKetan` as public; Vercel project deployment SSO is enabled.
+- GitHub currently reports `AimBotFTW/ShivKetan` as public; Vercel preview deployment is READY and redirects anonymous requests to Vercel SSO; no production promotion was made.
 - The Missing Piece template licence remains unresolved.
